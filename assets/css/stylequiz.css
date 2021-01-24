@@ -1,0 +1,244 @@
+* {
+    box-sizing: border-box;
+}
+
+li{
+    padding-bottom: 3px;
+    color: white;
+    text-shadow: 1.5px 1px 3px black;
+    list-style-type: none;
+}
+
+
+body {
+    font-family:'Courier New', Courier, monospace;
+    display: flex;
+    flex-direction: column;
+    justify-content: baseline;
+    min-height: 100vh;
+    font-size: 20px;
+
+}
+
+.container {
+    margin: 20px auto;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0px 5px 15px 0px;
+    position: relative;
+    height: 650px;
+    width: 800px;
+}
+
+.score-page {
+    margin: 10px;
+}
+.score-page button {
+    top: 50%;
+    -ms-transform: translateY(80%);
+    transform: translateY(80%);
+    -ms-transform: translateX(280%);
+    transform: translateX(280%);
+
+}
+.start-page{
+    position: absolute;
+    font-size: 15px;
+    margin: 10px;
+    align-items: center;
+}
+
+
+#start-game-btn {
+    font-size: 0.7em;
+    font-weight: bolder;
+    word-break: break-all;
+    width: 100px;
+    height: 150px;
+    border: 2px solid lightgrey;
+    text-align: center;
+    cursor: pointer;
+    
+    left: 300px;
+    top: 50px;
+    color: lightgrey;
+}
+
+#start-game-btn:hover {
+    border: 3px solid lightseagreen;
+    color: lightseagreen;
+}
+
+#high-score-btn {
+    font-size: 0.7em;
+    font-weight: bolder;
+    word-break: break-all;
+    width: 100px;
+    height: 150px;
+    border: 2px solid lightgrey;
+    text-align: center;
+    cursor: pointer; 
+    right: 200px;
+    top: 50px;
+    color: lightgrey;
+}
+#high-score-btn:hover {
+    border: 3px solid red;
+    color: red;
+}
+.time-remaining {
+    width: 500px;
+    height: 20px;
+    position: absolute;
+    right: 20;
+    top: 0;
+    margin: 5px;
+}
+
+.questions {
+    width: 500px;
+    height: 20px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin: 5px;
+}
+
+.choices {
+    width: 480px;
+    position: relative;
+    right: 0;
+    top: 125px;
+    padding: 5px;
+    width: 400px;
+    word-break: break-all;
+
+}
+
+.choice {
+    display: inline-block;
+    width: 135px;
+    text-align: center;
+    border: 1px solid grey;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 2px;
+    font-size: 0.7em;
+
+}
+
+.choice:hover {
+    border: 2px solid lightblue;
+    font-weight: bold;
+}
+
+#high-score-main {
+    display: none;
+}
+
+.game {
+    display: none;
+}
+
+
+#game-over {
+    text-align: center;
+    display: none;
+    align-items: center;
+    flex-direction: column;
+}
+
+#score-name {
+    padding-bottom: 5rem;
+    text-align: center;
+  
+}
+#score-btn {
+    border: 1px solid grey;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 2px;
+    font-size: 0.7em;
+}
+ #score-btn:hover {
+    border: 2px solid lightblue;
+    font-weight: bold;
+ }
+
+
+#high-score {
+    height: 1.5rem;
+    border: groove 2px;
+}
+
+#high-score-main {
+    margin : 20px auto;
+    background-color: white;
+    opacity: 0.8;
+    height: 450px;
+    width : 800px;
+    border-radius: 5px;
+    box-shadow: 0px 5px 15px 0px;
+    position: relative;
+    display: none;
+}
+
+#high-score-main p {
+    position: absolute;
+    display: block;
+    width : 59px;
+    height :59px;
+    top:130px;
+    left:325px;
+    font-size: 1.5em;
+    font-weight: bold;
+    text-align: center;
+}
+
+#end-game-btn {
+    position: relative;
+    font-size: 15px;
+    margin: 10px;
+    align-items: center;
+    left: 280px;
+}
+
+#play-again-btn {
+    font-size: 0.7em;
+    font-weight: bolder;
+    word-break: break-all;
+    width: 100px;
+    height: 150px;
+    border: 2px solid lightgrey;
+    text-align: center;
+    cursor: pointer;
+    
+    left: 300px;
+    top: 50px;
+    color: lightgrey;
+}
+
+#play-again-btn:hover {
+    border: 3px solid yellow;
+    color: yellow;
+}
+
+#clear-score-btn {
+    font-size: 0.7em;
+    font-weight: bolder;
+    word-break: break-all;
+    width: 100px;
+    height: 150px;
+    border: 2px solid lightgrey;
+    text-align: center;
+    cursor: pointer;
+    
+    left: 300px;
+    top: 50px;
+    color: lightgrey; 
+}
+
+#clear-score-btn:hover {
+    border: 3px solid blue;
+    color: blue;
+}
