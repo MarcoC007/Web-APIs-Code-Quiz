@@ -11,5 +11,5 @@
 
 ## ScreenShots
 
-![](/assets/images/CodeQuiz.png)
+![Screenshot](/assets/images/CodeQuiz.png)
 * This is the Starting Page 
