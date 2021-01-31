@@ -4,8 +4,8 @@
 
 li{
     padding-bottom: 3px;
-    color: white;
-    text-shadow: 1.5px 1px 3px black;
+    color: black;
+    text-shadow: 1.5px 1px 3px white;
     list-style-type: none;
 }
 
@@ -30,10 +30,10 @@ body {
     width: 800px;
 }
 
-.score-page {
+#start-page {
     margin: 10px;
 }
-.score-page button {
+#start-page button {
     top: 50%;
     -ms-transform: translateY(80%);
     transform: translateY(80%);
@@ -41,7 +41,7 @@ body {
     transform: translateX(280%);
 
 }
-.start-page{
+#start-page{
     position: absolute;
     font-size: 15px;
     margin: 10px;
@@ -69,7 +69,7 @@ body {
     color: lightseagreen;
 }
 
-#high-score-btn {
+#highscore-btn {
     font-size: 0.7em;
     font-weight: bolder;
     word-break: break-all;
@@ -86,7 +86,7 @@ body {
     border: 3px solid red;
     color: red;
 }
-.time-remaining {
+.time {
     width: 500px;
     height: 20px;
     position: absolute;
@@ -95,18 +95,12 @@ body {
     margin: 5px;
 }
 
-.questions {
-    width: 500px;
-    height: 20px;
-    position: absolute;
-    right: 0;
-    top: 0;
-    margin: 5px;
-}
-
-.choices {
+#choices {
+    top: 50%;
+    -ms-transform: translateX(280%);
+    transform: translateX(280%);
     width: 480px;
-    position: relative;
+    /* position: relative; */
     right: 0;
     top: 125px;
     padding: 5px;
@@ -115,9 +109,15 @@ body {
 
 }
 
+#questions {
+    margin-left: 100px;
+}
+
 .choice {
+    margin: 0px 0px 100px 0px;
     display: inline-block;
-    width: 135px;
+    width: 150px;
+    height: 100px;
     text-align: center;
     border: 1px solid grey;
     border-radius: 5px;
@@ -136,7 +136,7 @@ body {
     display: none;
 }
 
-.game {
+#game {
     display: none;
 }
 
@@ -153,25 +153,25 @@ body {
     text-align: center;
   
 }
-#score-btn {
+#submit-btn {
     border: 1px solid grey;
     border-radius: 5px;
     cursor: pointer;
     margin: 2px;
     font-size: 0.7em;
 }
- #score-btn:hover {
+ #submit-btn:hover {
     border: 2px solid lightblue;
     font-weight: bold;
  }
 
 
-#high-score {
+#highscore {
     height: 1.5rem;
     border: groove 2px;
 }
 
-#high-score-main {
+#highscore-main {
     margin : 20px auto;
     background-color: white;
     opacity: 0.8;
@@ -183,7 +183,7 @@ body {
     display: none;
 }
 
-#high-score-main p {
+#highscore-main p {
     position: absolute;
     display: block;
     width : 59px;
@@ -196,6 +196,7 @@ body {
 }
 
 #end-game-btn {
+    display: "";
     position: relative;
     font-size: 15px;
     margin: 10px;
@@ -212,7 +213,7 @@ body {
     border: 2px solid lightgrey;
     text-align: center;
     cursor: pointer;
-    
+    display: none;
     left: 300px;
     top: 50px;
     color: lightgrey;
@@ -232,7 +233,7 @@ body {
     border: 2px solid lightgrey;
     text-align: center;
     cursor: pointer;
-    
+    display: none;
     left: 300px;
     top: 50px;
     color: lightgrey; 

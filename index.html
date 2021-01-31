@@ -12,42 +12,45 @@
         <h1>Code Quiz Game</h1>
         <h2>In this game will test your knowledge in Coding!!!</h2>
         <button id="start-game-btn">Start Game</button>
-        <button id="high-score-btn">High Score</button>
+        <button id="highscore-btn">High Score</button>
       </div>
 
-      <div class="game">
-        <div class="time-remaining">Time Remaining:</div>
-        <div class="questions">Questions!</div>
-        <div class="choices"><p>Choices Placeholder</p></div>
-        <button class="choice" id="A">Button A</button>
-        <button class="choice" id="B">Button B</B></button>
-        <button class="choice" id="C">Button C</button>
-        <button class="choice" id="D">Button D</Datag></button>
+      <div id="game">
+        <div class="time">Time Remaining:<span id="time"></span></div>
+        
+        <div id="questions"><p>Questions</p></div>
+        <button class="choice" id="buttonA">Button A</button>
+        <button class="choice" id="buttonB">Button B</button>
+        <button class="choice" id="buttonC">Button C</button>
+        <button class="choice" id="buttonD">Button D</button>
         <div class="results"></div>
       </div>
      
       <div id="game-over">
       <div id="score-name"></div>
-      <input size="40" type="text" placeholder="Enter your name for High Score!" name="User-name" id="User-name">
-      <button id="score-btn">Submit Score</button>
+      <input size="40" type="text" placeholder="Enter your name for High Score!" name="user-name" id="user-name-input">
+      <button id="submit-btn">Submit Score</button>
       </div>
      
-     <div id="high-score-container">
-       <div id="high-score-main">
-         <div id="high-score">
+     <div id="highscore-container">
+       <div id="highscore-main">
+         <div id="highscore">
            <h3>User Name</h3>
            <h3>High Score</h3>
          </div>
          <div id="highscore-name"></div>
      <div id="highscore-points"></div>
        </div>
-       <div id="end-game-btn">
+       <div id="end-game">
          <button id="play-again-btn">Play Again!</button>
          <button id="clear-score-btn">Clear Highscore</button>
        </div>
      </div> 
 
+     <div id="display-message"></div>
+
     </div>
-    <script src="assets/js/script.js"></script>
+    <!-- <script src="assets/js/script.js"></script> -->
+    <script src="assets/js/script1.js"></script>
   </body>
 </html>
