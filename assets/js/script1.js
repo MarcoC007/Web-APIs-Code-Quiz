@@ -16,19 +16,20 @@ var highScorePoints = document.getElementById("highscore-points");
 var submitBtn = document.getElementById("submit-btn");
 var playAgainBtn = document.getElementById("play-again-btn");
 var clearScoreBtn = document.getElementById("clear-score-btn");
-var buttonA = document.getElementById("buttonA");
-var buttonB = document.getElementById("buttonB");
-var buttonC = document.getElementById("buttonC");
-var buttonD = document.getElementById("buttonD");
+
+// var buttonA = document.getElementById("buttonA");
+// var buttonB = document.getElementById("buttonB");
+// var buttonC = document.getElementById("buttonC");
+// var buttonD = document.getElementById("buttonD");
 
 
 // game choices
 var gameQuestions = [{
     question: "What tag defines a division or the beginning/end of an individual section in an HTML document?",
-    choiceA: "<div>",
-    choiceB: "<meta>",
-    choiceC: "<img>",
-    choiceD: "<table>",
+    choiceA: "div",
+    choiceB: "meta",
+    choiceC: "img",
+    choiceD: "table",
     correctAnswer: "A"
 },
 {
@@ -49,8 +50,8 @@ var gameQuestions = [{
 },
 {
     question: "What should appear at the very end of your JavaScript?",
-    choiceA: "The <script>",
-    choiceB: "The </script>",
+    choiceA: "The script",
+    choiceB: "The /script",
     choiceC: "The END statement",
     choiceD: " None of the above",
     correctAnswer: "B"
@@ -87,27 +88,29 @@ var timeLeft = gameQuestions.length * 15;
 var timer;
 var score = 0;
 
-// these are all the functions
 
-// this function generates every question and answers 
+
 function generateQuestions() {
-    
-    gameOverEl.style.display = "none";
 
-    if (currentQuestionIndex === finalQuestionIndex) {
-        return showScore();
-    } 
-    var currentQuestion = gameQuestions[currentQuestionIndex];
+gameOverEl.style.display = "none";
+ 
 
-    questionsEl.innerText = currentQuestion.question;
+var currentQuestion = gameQuestions[currentQuestionIndex];
+var choicesEl = document.getElementById('choices');
 
-    buttonA = currentQuestion.choiceA;
-    buttonB = currentQuestion.choiceB;
-    buttonC = currentQuestion.choiceC;
-    buttonD = currentQuestion.choiceD;
+if(currentQuestion === finalQuestionIndex) {
+    return showScore();
+}
 
-    console.log(generateQuestions());
-};
+questionsEl.innerHTML = '<p>' + currentQuestion.question + '</p>';
+
+buttonA.innerHTML = currentQuestion.choiceA;
+buttonB.innerHTML = currentQuestion.choiceB;
+buttonC.innerHTML = currentQuestion.choiceC;
+buttonD.innerHTML = currentQuestion.choiceD;
+
+choicesEl.innerHTML = " ";
+}
 
 // this function starts the game and display the game quiz content
 function startGame() {
@@ -116,6 +119,7 @@ function startGame() {
 
     gameOverEl.style.display = 'none';
     
+    generateQuestions();
 
     timer = setInterval(function() {
         timeLeft--;
@@ -130,6 +134,8 @@ function startGame() {
             clearInterval(timer)
         
             showScore();
+
+            
         
         }
         }, 1000);
@@ -161,9 +167,9 @@ submitBtn.addEventListener('click', function highScore() {
     }
      else {
         var saveHighscore = JSON.parse(window.localStorage.getItem('saveHighscore')) || [];
-        var currentHighscore = playerInit.value.trim();
+        var currentUser = playerInit.value.trim();
         var newScore = {
-            name: playerInit,
+            name: currentUser,
             score: score
         }
 
@@ -192,6 +198,7 @@ var highscore = JSON.parse(window.localStorage.getItem('highscore')) || [];
 for (var i = 0; i < highscore.length; i++) {
     var newName = document.createElement("li");
     var newHS = document.createElement("li");
+    newName.textContent = highscore[i].name;
     newHs.textContent = highscore[i].score;
     highScoreName.appendChild(newName);
     highScorePoints.appendChild(newHS);
@@ -233,13 +240,13 @@ function replayGame() {
     timeLeft = gameQuestions.length * 15;
     currentQuestionIndex = 0;
     score = 0;
-    console.log('putas');
+    
 }
 
 // this function checks if a question is answered correct or wrong!
 function checkAnswer(answer) {
 
-    var message = document.getElementById("display-message");
+    // var message = document.getElementById("display-message");
 
     var correct = gameQuestions[currentQuestionIndex].correctAnswer;
 
@@ -247,15 +254,15 @@ function checkAnswer(answer) {
         score++;
         alert("Correct!");
         currentQuestionIndex++;
-        generateQuestions;
+        generateQuestions();
     } 
     else if (answer !== correct && currentQuestionIndex !== finalQuestionIndex){
-        alert("Wrong!")
+        alert("Wrong!");
         currentQuestionIndex++;
-        generateQuestions;
+        generateQuestions();
     } 
     else {
-        showScore;
+        showScore();
     }
 
 }
@@ -267,13 +274,13 @@ function checkAnswer(answer) {
 // all are event listeners 
 startBtn.onclick = startGame;
 
-buttonA.onclick = checkAnswer("A");
+// buttonA.onclick = checkAnswer("A");
 
-buttonB.onclick = checkAnswer("B");
+// buttonB.onclick = checkAnswer("B");
 
-buttonC.onclick = checkAnswer("C");
+// buttonC.onclick = checkAnswer("C");
 
-buttonD.onclick = checkAnswer("D");
+// buttonD.onclick = checkAnswer("D");
 
 playAgainBtn.onclick = replayGame;
 
