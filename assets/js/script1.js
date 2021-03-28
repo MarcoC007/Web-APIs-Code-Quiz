@@ -106,7 +106,7 @@ function generateQuestions() {
     buttonC = currentQuestion.choiceC;
     buttonD = currentQuestion.choiceD;
 
-    
+    console.log(generateQuestions());
 };
 
 // this function starts the game and display the game quiz content
